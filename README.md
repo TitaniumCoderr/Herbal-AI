@@ -5,14 +5,15 @@ To run the system, create a virtual environment. This is done by:
 python -m venv venv
 
 Once the environment has been created, activate it by:
-source venv/bin/activate on Linux and Mac
-.\venv\Scripts\activate on Windows
+
+  source venv/bin/activate on Linux and Mac
+  .\venv\Scripts\activate on Windows
 
 Once the environment is active, run:
-pip install -r requirements.txt
+  pip install -r requirements.txt
 
 Wait for the processes to be complete then run the sytem by:
-streamlit run streamlit_host.py
+  streamlit run streamlit_host.py
 
 Once the web page opens, you may use the system.
 
