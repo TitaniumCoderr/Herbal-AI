@@ -8,7 +8,7 @@ Once the environment has been created, activate it by:
 source venv/bin/activate on Linux and Mac
 .\venv\Scripts\activate on Windows
 
-Once the environmenbt is active, run:
+Once the environment is active, run:
 pip install -r requirements.txt
 
 Wait for the processes to be complete then run the sytem by:
