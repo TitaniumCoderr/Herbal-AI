@@ -17,35 +17,48 @@ with col2:
     st.title("")
     st.title("Welcome to Herbal AI")
 
-    model = tf.keras.models.load_model("saved_model/myModel.hdf5")
+    model = tf.keras.models.load_model("saved_model/myModel1.keras")
     ### load file
     uploaded_file = st.file_uploader("Choose a image file", type="jpg")
 
-    map_dict = {0: 'Cherry (Powdery Mildew)',
-                1: 'Corn (Common Rust)',
-                2: 'Corn (Healthy)',
-                3: 'Grape (Black Rot)',
-                4: 'Grape (Esca aka Black Measles)',
-                5: 'Grape (Isariopsis Leaf Spot aka Leaf Blight)',
-                6: 'Orange (Huanglongbing aka Citrus Greening)',
-                7: 'Peach (Bacterial Spot)',
-                8: 'Pepper Bell (Bacterial Spot)',
-                9: 'Pepper Bell (Healthy)',
-                10: 'Potato (Early Blight)',
-                11: 'Potato (Late Blight)',
-                12:'Soybean (Healthy)',
-                13:'Squash (Powdery Mildew)',
-                14:'Strewberry (Leaf Scorch)',
-                15:'Tomato (Bacterial Spot)',
-                16:'Tomato (Early Blight)',
-                17:'Apple (Cedar Apple Rust)',
-                18:'Apple (Black Rot)',
-                19:'Apple (Healthy)',
-                20:'Apple (Scab)',
-                21:'Blueberry (Healthy)',
-                22:'Pomegranate (Healthy)',
-                23:'Janum',
-                24:'Pongamia Pinnata (Healthy)'}
+    map_dict = {0:'Apple (scab)', 
+                1:'Apple (Black_rot)', 
+                2:'Corn (Cercospora leaf spot)', 
+                3:'Blueberry (healthy)', 
+                4:'Apple (Cedar apple rust)',
+                5:'Cherry (healthy)', 
+                6:'Apple (healthy)', 
+                7:'Cherry (Powdery mildew)', 
+                8:'Corn (Common rust)', 
+                9:'Corn (healthy)', 
+                10:'Corn (Northern Leaf Blight)', 
+                11:'Grape (healthy)', 
+                12:'Grape (Leaf blight / Isariopsis Leaf Spot)',
+                13:'Grape (Esca / Black Measles)', 
+                14:'Peach (Bacterial spot)', 
+                15:'Orange (Haunglongbing / Citrus_greening)', 
+                16:'Grape (Black rot)', 
+                17:'Peach (healthy)', 
+                18:'Bell Pepper (Bacterial spot)', 
+                19:'Bell Pepper (healthy)', 
+                20:'Potato (Early blight)', 
+                21:'Potato (Late blight)', 
+                22:'Potato (healthy)',
+                23:'Raspberry (healthy)', 
+                24:'Soybean (healthy)', 
+                25:'Tomato (Bacterial spot)', 
+                26:'Tomato (healthy)', 
+                27:'Strawberry (healthy)', 
+                28:'Tomato (Early blight)', 
+                29:'Squash (Powdery_mildew)',
+                30:'Tomato (Late_blight)', 
+                31:'Tomato (Leaf_Mold)', 
+                32:'Strawberry (Leaf_scorch)', 
+                33:'Tomato (Two-spotted spider mite)', 
+                34:'Tomato (Septoria leaf spot)', 
+                35:'Tomato (Target Spot)', 
+                36:'Tomato (Tomato mosaic virus)', 
+                37:'Tomato (Tomato Yellow Leaf Curl Virus)'}
 
 
     if uploaded_file is not None:
@@ -64,4 +77,4 @@ with col2:
         if Genrate_pred:
             prediction = model.predict(img_reshape).argmax()
             #st.success(prediction)
-            st.success("Predicted Label for the image is {}".format(map_dict [prediction]))
+            st.success("Predicted Label for the image is {}".format(map_dict[prediction]))
